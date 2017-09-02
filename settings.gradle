@@ -1,1 +1,1 @@
-include ':app', ':_A02_Activity_01', ':_A02_Activity_02', ':_A02_Activity_03', ':_A02_Activity_04', ':_A02_Activity_05', ':_A02_Activity_06'
+include ':app'

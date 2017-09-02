@@ -6,8 +6,6 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 public class TelaInicialActivity extends DebugActivity {
 
     @Override
