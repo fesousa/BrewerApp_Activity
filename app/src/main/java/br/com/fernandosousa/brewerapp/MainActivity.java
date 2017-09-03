@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends DebugActivity {
 
@@ -47,9 +48,19 @@ public class MainActivity extends DebugActivity {
                 Bundle params = new Bundle();
                 params.putString("nome", txtUsuario);
                 intent.putExtras(params);
-                
-                startActivity(intent);
+
+                // sem resultado
+                //startActivity(intent);
+                // com resultado
+                startActivityForResult(intent, 1);
             }
         };
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            String result=data.getStringExtra("result");
+            Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
+        }
     }
 }

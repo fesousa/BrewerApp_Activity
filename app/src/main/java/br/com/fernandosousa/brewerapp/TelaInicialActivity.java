@@ -1,8 +1,11 @@
 package br.com.fernandosousa.brewerapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,5 +25,21 @@ public class TelaInicialActivity extends DebugActivity {
 
         TextView texto = (TextView) findViewById(R.id.textoInicial);
         texto.setText(nome);
+
+        Button botaoSair = (Button)findViewById(R.id.botaoSair);
+        botaoSair.setOnClickListener(clickSair());
+    }
+
+    public View.OnClickListener clickSair() {
+        return new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("result","Saída do BrewerApp");
+                setResult(Activity.RESULT_OK,returnIntent);
+                finish();
+            }
+        };
     }
 }
